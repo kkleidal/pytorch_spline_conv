@@ -30,7 +30,7 @@ def get_extensions():
 
         if with_cuda:
             Extension = CUDAExtension
-            define_macros += [('with_cuda', None)]
+            define_macros += [('WITH_CUDA', None)]
             nvcc_flags = os.getenv('NVCC_FLAGS', '')
             nvcc_flags = [] if nvcc_flags == '' else nvcc_flags.split(' ')
             nvcc_flags += ['-arch=sm_35', '--expt-relaxed-constexpr']
